@@ -1,0 +1,9 @@
+package sapient.datedemo;
+
+import java.time.LocalDate;
+
+public class DateTime {
+
+	LocalDate currentDate=LocalDate.now();
+	
+}

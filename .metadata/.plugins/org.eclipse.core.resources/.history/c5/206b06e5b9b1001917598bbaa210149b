@@ -1,0 +1,17 @@
+package sapient.datedemo;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class DateDemo {
+
+	public static void main(String args[])
+	{
+		Date currentdate = new Date();
+		//System.out.println(currentdate.getDate());
+		
+		Calendar cal=Calendar.getInstance();
+		cal.set(2019, 07, 29);
+		cal.add(Calendar.DATE, 4);
+	}
+}
