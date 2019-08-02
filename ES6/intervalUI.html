@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <button id="yes">Start</button>
+        <button id="no">Stop</button>
+        <button id="pause">Pause</button>
+        <span id="timer">0</span>
+    </div>
+    <!-- <div>
+            <a href="#" id="start">Start</a>
+            <a href="#" id="stop">Stop</a>
+            <span id="text">0</span>
+        </div> -->
+    <script>
+        let handle;
+        let count = 0;
+        document.querySelector('#yes').addEventListener('click', () => {
+
+            handle = setInterval(() => {
+                document.getElementById("timer").innerHTML = `<h2>${count}</h2>`;
+                count++;
+            }, 1000)
+        });
+        document.querySelector('#pause').addEventListener('click', () => {
+            clearInterval(handle);
+        });
+        document.querySelector('#no').addEventListener('click', () => {
+            count = 0;
+            clearInterval(handle);
+        });
+    </script>
+</body>
+
+</html>
