@@ -5,7 +5,7 @@ const movieSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    age :{
+    duration :{
         type: Number ,
         required : true
     },

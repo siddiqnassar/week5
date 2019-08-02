@@ -5,12 +5,11 @@ exports.create = function(req,res){
     console.log('Came inside savemethod of employee')
     let movie=new Movie();
     movie.name=req.body.name;
-    movie.age= req.body.age;
+    movie.duration= req.body.duration;
     movie._id=req.body._id;
     movie.save(function(err){
         res.json({
-            status :'Success',
-            data : movie
+            
         });
     })
    
@@ -61,7 +60,7 @@ exports.update=function(req,res){
         if (err)
             res.send(err);
 emp.name = req.body.name;
-emp.age=req.body.age;      
+emp.duration=req.body.duration;      
 // save the contact and check for errors
         emp.save(function (err) {
             if (err)

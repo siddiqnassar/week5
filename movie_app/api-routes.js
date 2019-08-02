@@ -8,8 +8,8 @@ router.get('/',(req,res)=>{
     })
 });
 
-router.route('/moviesinsert').post(MoviesController.create);
-router.route('/movies/listall').get(MoviesController.listAll);
+router.route('/movies/insert').post(MoviesController.create);
+router.route('/movies').get(MoviesController.listAll);
 router.route('/delete/:name').delete(MoviesController.delete);
 router.route('/movies/:_id').get(MoviesController.findById);
 router.route('/movies/update/:_id').put(MoviesController.update);
