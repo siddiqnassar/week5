@@ -1,0 +1,35 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@EnableDiscoveryClient //can discover any other client
+@Controller
+
+@SpringBootApplication
+public class LoginServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LoginServiceApplication.class, args);
+	}
+
+	@RequestMapping("/login")
+	public String invoke()
+	{
+		
+		return "login";
+	}
+	@PostMapping(value="/callservice")
+	public String invokeService(@RequestParam("t1") String  name,@RequestParam("t2") String pwd)
+	{
+		System.out.println("hii");
+		String url="http://My-Service:8091";
+		return restTemplate.getForObject(url,String.class);
+	}
+}
